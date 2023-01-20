@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/codebridge/static/css/main.073c9b0a.css",
+    "main.js": "/codebridge/static/js/main.94d33ff8.js",
+    "static/js/787.c23e9466.chunk.js": "/codebridge/static/js/787.c23e9466.chunk.js",
+    "static/media/logo.svg": "/codebridge/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/codebridge/index.html",
+    "main.073c9b0a.css.map": "/codebridge/static/css/main.073c9b0a.css.map",
+    "main.94d33ff8.js.map": "/codebridge/static/js/main.94d33ff8.js.map",
+    "787.c23e9466.chunk.js.map": "/codebridge/static/js/787.c23e9466.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.94d33ff8.js"
+  ]
+}
