@@ -1,0 +1,1 @@
+export { PostInfoPage } from './PostInfoPage';

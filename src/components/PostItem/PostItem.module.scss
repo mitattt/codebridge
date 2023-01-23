@@ -1,0 +1,129 @@
+@import '../../styles/mixins';
+@import '../../styles/vars';
+
+.postCard {
+  display: flex;
+  flex-direction: column;
+  width: 340px;
+  border: 1px solid $border-color;
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.05);
+  border-radius: 5px;
+  transition: all 0.2s ease;
+
+  @include onLaptop {
+    width: 380px;
+  }
+
+  @include onTablet {
+    width: 370px;
+  }
+
+  @include onDesktop {
+    width: 400px;
+  }
+
+  &:hover {
+    box-shadow: 0px 3px 13px rgba(23, 32, 49, 0.4);
+    transform: translateY(-5px);
+  }
+
+  &__container {
+    padding: 25px;
+  }
+
+  &__title {
+    color:$primary-color;
+    margin-bottom: 25px;
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 24px;
+    height: 58px;
+
+    @include onTablet {
+      line-height: 26px;
+      font-size: 20px;
+      margin-bottom: 30px;
+    }
+
+    @include onLaptop {
+      line-height: 28px;
+      font-size: 21px;
+      margin-bottom: 35px;
+    }
+
+    @include onDesktop {
+      line-height: 30px;
+      font-size: 24px;
+      margin-bottom: 50px;
+    }
+  }
+
+  &__link {
+    color: $primary-color;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+
+    &:hover::after {
+      margin-left: 12px;
+    }
+
+    &::after {
+      content: url(../../assets/img/Arrow.svg);
+      width: 12px;
+      height: 10px;
+      margin-left: 8px;
+      transition: 0.2s;
+    }
+
+    &_text {
+      font-weight: 400;
+      font-size: 24px;
+    }
+
+    &_img {
+      height: 188px;
+      width: 100%;
+      display: block;
+      object-fit: cover;
+
+      @include onTablet {
+        height: 196px;
+      }
+
+      @include onLaptop {
+        height: 210px;
+      }
+
+      @include onDesktop {
+        height: 217px;
+      }
+    }
+  }
+
+  &__date {
+    color: $primary-color;
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: 400;
+    opacity: 0.6;
+
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+
+    &::before {
+      content: url(../../assets/img/akar-icons_calendar.svg);
+      width: 16px;
+      height: 16px;
+      margin-right: 9px;
+    }
+  }
+
+  &__content {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 20px;
+    height: 96px;
+  }
+}

@@ -1,0 +1,71 @@
+@import './styles/reset';
+@import './styles/mixins';
+@import './styles/grid';
+@import './styles/vars';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+html {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
+  margin: 0;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: black;
+  overflow-x: hidden;
+  font-size: 14px;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-width: 329px;
+
+  &__section {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: auto;
+    padding: 50px 75px 63px 75px;
+  }
+
+  &__container {
+
+    width: 320px;
+    height: 100%;
+
+    @include onTablet {
+      width: 640px;
+    }
+
+    @include onLaptop {
+      width: 768px;
+    }
+
+    @include onDesktop {
+      padding: 50px 75px 68px 75px;
+    }
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $secondary-color;
+}
