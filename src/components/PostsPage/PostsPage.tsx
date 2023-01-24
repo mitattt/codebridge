@@ -8,6 +8,7 @@ import { PostItem } from '../PostItem';
 import { Loader } from '../Loader';
 import { SearchBar } from '../SearchBar';
 import errorImage from '../../assets/img/error.png';
+import { ButtonGoToUp } from '../ButtonGoToUp';
 
 export const PostsPage: React.FC = () => {
   const [posts, setPosts] = useState<Post[]>([]);
@@ -60,7 +61,7 @@ export const PostsPage: React.FC = () => {
 
       <div className={styles.line}></div>
 
-      <div>
+      <div className={styles.wrapper}>
         {isLoading ? (
           <Loader />
         ) : (
@@ -88,7 +89,9 @@ export const PostsPage: React.FC = () => {
             }
           </div>
         )}
+        {newPosts.length !== 0 && <ButtonGoToUp />}
       </div>
+
     </>
   );
 };

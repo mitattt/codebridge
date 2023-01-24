@@ -76,6 +76,12 @@
   }
 }
 
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 @keyframes fly_out_right {
   0% {
     transform: translateX(100%);

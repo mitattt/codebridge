@@ -2,14 +2,10 @@
 import React from 'react';
 import { PostsPage } from '../../components/PostsPage';
 import { Container } from '@mui/material';
-import { ButtonGoToUp } from '../../components/ButtonGoToUp';
 
 export const HomePage: React.FC = () => {
   return (
     <Container sx={{
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'center',
       p: {
         xl: '50px 0 63px 0',
         lg: '50px 0 63px 0',
@@ -19,7 +15,6 @@ export const HomePage: React.FC = () => {
       },
     }}>
       <PostsPage />
-      <ButtonGoToUp />
     </Container>
   );
 };
