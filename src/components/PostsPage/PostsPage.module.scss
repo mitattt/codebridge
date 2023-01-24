@@ -14,16 +14,17 @@
 }
 
 .catalog {
+  position: 'relative';
   margin-bottom: 24px;
   display: grid;
   justify-content: center;
   grid-template-columns: repeat(1, 1fr);
   column-gap: 45px;
   row-gap: 45px;
+  justify-items: center;
 
   @include onTablet {
     grid-template-columns: repeat((1, 1fr));
-    justify-items: center;
   }
 
   @include onLaptop {
@@ -53,4 +54,58 @@
 
 .seachBar {
   margin-bottom: 40px;
+}
+
+.error {
+  &__image {
+    width: 300px;
+    height: 300px;
+    width: 60%;
+
+    object-fit: contain;
+    object-position: center;
+
+    animation: fly_out_left 0.3s linear 0s 1 normal;
+  }
+
+  &__text {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    animation: fly_out_right 0.3s linear 0s 1 normal;
+  }
+}
+
+@keyframes fly_out_right {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fly_out_left {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  70% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

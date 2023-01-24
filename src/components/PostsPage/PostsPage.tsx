@@ -7,6 +7,7 @@ import { Post } from '../../types/Post';
 import { PostItem } from '../PostItem';
 import { Loader } from '../Loader';
 import { SearchBar } from '../SearchBar';
+import errorImage from '../../assets/img/error.png';
 
 export const PostsPage: React.FC = () => {
   const [posts, setPosts] = useState<Post[]>([]);
@@ -32,11 +33,19 @@ export const PostsPage: React.FC = () => {
   }, [loadPosts]);
 
   const includesQuery = (string: string) => string.toLocaleLowerCase()
-    .includes(query.toLocaleLowerCase());
+    .includes(query.toLocaleLowerCase().trim());
 
-  const visiblePosts = posts.filter(
+  const postsFilteredByTitle = posts.filter(
     post => includesQuery(post.title),
   );
+
+  const postsFilteredBtSummary = posts.filter(
+    post => includesQuery(post.summary),
+  );
+
+  const filteredPosts = [...postsFilteredByTitle, ...postsFilteredBtSummary];
+  const newPosts = filteredPosts
+    .filter((el, i) => filteredPosts.indexOf(el) === i);
 
   return (
     <>
@@ -46,7 +55,7 @@ export const PostsPage: React.FC = () => {
       </div>
 
       <h4 className={styles.postsPage__totalItems}>
-        Results: {visiblePosts.length}
+        Results: {newPosts.length}
       </h4>
 
       <div className={styles.line}></div>
@@ -56,13 +65,27 @@ export const PostsPage: React.FC = () => {
           <Loader />
         ) : (
           <div className={styles.catalog}>
-            {visiblePosts.map((post) => (
-              <PostItem
-                key={post.id}
-                post={post}
-                query={query}
-              />
-            ))}
+            {newPosts.length > 0
+              ? (
+                newPosts.map((post) => (
+                  <PostItem
+                    key={post.id}
+                    post={post}
+                    query={query}
+                  />
+                ))
+              )
+              : (
+                <>
+                  <img
+                    src={errorImage}
+                    alt="errorImage"
+                    className={styles.error__image}
+                  />
+                  <h1 className={styles.error__text}>There is nothing more</h1>
+                </>
+              )
+            }
           </div>
         )}
       </div>

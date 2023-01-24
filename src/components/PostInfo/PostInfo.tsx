@@ -1,5 +1,6 @@
 /* eslint-disable max-len */
 /* eslint-disable no-use-before-define */
+import { Container } from '@mui/material';
 import React, { useCallback, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { getById } from '../../api/posts';
@@ -33,8 +34,6 @@ export const PostInfo: React.FC<Props> = ({ postId }) => {
     loadPost();
   }, [loadPost]);
 
-  const fullContent = currPostInfo?.summary + ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores vitae autem obcaecati nulla voluptatum debitis, eaque tempora beatae tempore reiciendis molestias consequatur amet cumque deleniti fugiat eum sapiente illo animi delectus. Explicabo soluta esse debitis, officia obcaecati possimus tenetur aliquam eligendi quas expedita voluptate, mollitia, a ad! Exercitationem ducimus quod dicta aut voluptates. Saepe omnis harum esse quidem quod dicta voluptates debitis illum eos fugit earum nulla voluptas veritatis doloremque, in minus sapiente quam ducimus a perferendis magnam. Consequuntur, quam earum deleniti est ratione tempora voluptatem aut nam alias at.';
-
   return (
     <article className={styles.postPage}>
       {isLoading
@@ -48,15 +47,32 @@ export const PostInfo: React.FC<Props> = ({ postId }) => {
             />
 
             <div className={styles.wrapper}>
-              <div className={styles.postPage__container}>
+              <Container sx={{
+                position: 'relative',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                bottom: '100px',
+                padding: {
+                  xs: '35px 40px 50px 40px',
+                  sm: '35px 40px 50px 40px',
+                  md: '35px 75px 50px 75px',
+                  lg: '35px 75px 50px 75px',
+                  xl: '35px 75px 50px 75px',
+                },
+                border: '1px solid #EAEAEA',
+                boxShadow: '0px 8px 24px rgba(0,0,0, 0.05)',
+                borderRadius: '5px',
+                backgroundColor: '#FFF',
+              }}>
                 <h2 className={styles.postPage__title}>{currPostInfo?.title}</h2>
                 <p className={styles.postPage__content}>
-                  {fullContent}
+                  {currPostInfo?.summary}
                 </p>
                 <Link to={'/'} className={styles.postPage__link}>
                   Back to homepage
                 </Link>
-              </div>
+              </Container>
             </div>
             <h2>
             </h2>

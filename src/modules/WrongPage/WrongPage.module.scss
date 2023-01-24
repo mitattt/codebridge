@@ -1,0 +1,11 @@
+@import '../../styles/vars';
+@import '../../styles/reset';
+
+text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+
+  color: $primary-color;
+}

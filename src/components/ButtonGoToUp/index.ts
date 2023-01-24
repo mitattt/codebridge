@@ -1,0 +1,1 @@
+export { ButtonGoToUp } from './ButtonGoToUp';

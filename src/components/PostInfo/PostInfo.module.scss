@@ -27,35 +27,6 @@
       }
   }
 
-  &__container {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    width: 500px;
-
-    @include onTablet {
-      width: 700px;
-    }
-
-    @include onLaptop {
-      width: 1000px;
-    }
-
-    @include onDesktop{
-      width: 1290px;
-    }
-
-    bottom: 100px;
-    padding: 35px 75px 50px 75px;
-
-    border: 1px solid $border-color;
-    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.05);
-    border-radius: 5px;
-    background-color: $white-color;
-  }
-
   &__title {
     font-weight: 400;
     font-size: 20px;

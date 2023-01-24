@@ -1,33 +1,46 @@
 /* eslint-disable no-use-before-define */
 import React from 'react';
-import styles from './SearchBar.module.scss';
 import search from '../../assets/img/Vector.svg';
+import {
+  FormControl, InputAdornment, OutlinedInput,
+} from '@mui/material';
 
 type Props = {
   query: string
-  onChangeQuery: (value:string) => void
+  onChangeQuery: (value: string) => void
 }
 
 export const SearchBar: React.FC<Props> = ({ query, onChangeQuery }) => {
   return (
-    <form
-      action="/"
-      className={styles.form}
+    <FormControl
+      sx={{
+        width: {
+          lg: '600px',
+          md: '600px',
+          sm: '100%',
+          xs: '100%',
+        },
+      }}
+      className="filter__input"
       onSubmit={(e) => e.preventDefault()}
     >
-      <img
-        src={search}
-        alt="search"
-        className={styles.image}
-      />
-      <input
-        type="text"
-        className={styles.search}
-        placeholder="What are you looking for?"
-        name='searchBar'
+      <OutlinedInput
+        placeholder='What are you looking for?'
+        sx={{
+          boxShadow: '0px 8px 24px rgba(0, 0, 0, 0.1)',
+          height: '50px',
+          border: '1px solid #EAEAEA',
+          borderRadius: '5px',
+          font: 'inherit',
+        }}
         value={query}
         onChange={(e) => onChangeQuery(e.target.value)}
+        startAdornment={(
+          <InputAdornment position="start">
+            <img src={search} alt="search" />
+          </InputAdornment>
+        )}
       />
-    </form>
+    </FormControl>
   );
 };

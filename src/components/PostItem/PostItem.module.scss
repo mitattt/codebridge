@@ -15,11 +15,11 @@
   }
 
   @include onTablet {
-    width: 370px;
+    width: 350px;
   }
 
   @include onDesktop {
-    width: 400px;
+    width: 370px;
   }
 
   &:hover {
@@ -53,7 +53,7 @@
 
     @include onDesktop {
       line-height: 30px;
-      font-size: 24px;
+      font-size: 22px;
       margin-bottom: 50px;
     }
   }
