@@ -7,7 +7,7 @@ export const ButtonGoToUp: React.FC = () => {
     <Button
       sx={{
         border: '1px solid grey',
-        color: 'black',
+        color: '#000',
       }}
       variant="outlined"
       onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
