@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/codebridge/static/css/main.d95148bd.css",
-    "main.js": "/codebridge/static/js/main.978c93ae.js",
+    "main.css": "/codebridge/static/css/main.c06fa0d8.css",
+    "main.js": "/codebridge/static/js/main.227dfab9.js",
     "static/media/Arrow.svg": "/codebridge/static/media/Arrow.da47d01a9fb2ed34b3c3.svg",
     "static/media/akar-icons_calendar.svg": "/codebridge/static/media/akar-icons_calendar.af7b17ef44599ddced13.svg",
     "index.html": "/codebridge/index.html",
     "static/media/Vector.svg": "/codebridge/static/media/Vector.fa6653935ac869051f42fd3ebd879ed0.svg",
-    "main.d95148bd.css.map": "/codebridge/static/css/main.d95148bd.css.map",
-    "main.978c93ae.js.map": "/codebridge/static/js/main.978c93ae.js.map"
+    "main.c06fa0d8.css.map": "/codebridge/static/css/main.c06fa0d8.css.map",
+    "main.227dfab9.js.map": "/codebridge/static/js/main.227dfab9.js.map"
   },
   "entrypoints": [
-    "static/css/main.d95148bd.css",
-    "static/js/main.978c93ae.js"
+    "static/css/main.c06fa0d8.css",
+    "static/js/main.227dfab9.js"
   ]
 }
